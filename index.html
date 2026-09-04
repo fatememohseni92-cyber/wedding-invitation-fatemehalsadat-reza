@@ -31,7 +31,6 @@
 }
 
 
-
 /* =========================================================
    RESET
 ========================================================= */
@@ -1530,6 +1529,19 @@ body {
 
 }
 
+
+
+/* =========================================================
+   MOBILE ONLY - SCROLL ON FINAL HALL SLIDE
+   Layout/appearance otherwise remains unchanged.
+========================================================= */
+@media (max-width: 480px) {
+    #stageHall {
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}
 </style>
 
 </head>
@@ -1974,7 +1986,7 @@ body {
 
 <section
     id="stageHall"
-    class="stage"  style="overflow-y: scroll;m">
+    class="stage">
 
 
     <div class="botanical-frame" >
