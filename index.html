@@ -1440,61 +1440,246 @@ body {
    MOBILE
 ========================================================= */
 
-@media(max-width:480px) {
+/* =========================================================
+   HALL MOBILE - DEFINITIVE SCROLL
+========================================================= */
 
-    .botanical {
-        width: 125px;
-        height: 380px;
-    }
+@media screen and (max-width: 480px) {
 
-    .botanical.right {
-        right: -18px;
-        top: 25%;
-    }
+    /* خود اسلاید تالار */
+    #stageHall {
+        position: absolute !important;
 
-    .botanical.left {
-        left: -18px;
-        top: 47%;
-    }
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
 
-    .botanical-oval {
+        width: 100% !important;
+        height: 100% !important;
 
-        width: 82%;
-        height: 68%;
-    }
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
 
+        -webkit-overflow-scrolling: touch !important;
 
-    /* عکس عروس و داماد */
+        touch-action: pan-y !important;
 
-    .couple-photo-box {
+        overscroll-behavior-y: auto !important;
 
-        width: 72%;
-
-        height: 72%;
-
-        top: 50%;
+        padding: 0 !important;
     }
 
 
-    /* عکس تالار */
+    /* =====================================================
+       پس زمینه
+    ===================================================== */
 
-    .hall-photo-box {
+    #stageHall .hall-background {
+        position: absolute !important;
 
-        width: 78%;
+        top: 0 !important;
+        left: 0 !important;
 
-        height: 33%;
+        width: 100% !important;
+        height: 100% !important;
 
-        top: 29%;
+        pointer-events: none !important;
+
+        z-index: 1 !important;
     }
 
 
-    .hall-content {
+    /* =====================================================
+       قسمت اسکرولی
+    ===================================================== */
 
-        bottom: 3%;
+    #stageHall .hall-scroll {
+
+        position: relative !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        min-height: 100% !important;
+
+        overflow: visible !important;
+
+        display: block !important;
+
+        padding-top: 8px !important;
+        padding-bottom: 60px !important;
+
+        z-index: 20 !important;
     }
 
-    .names {
-        top: 3%;
+
+    /* =====================================================
+       عکس تالار
+    ===================================================== */
+
+    #stageHall .hall-photo-box {
+
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        width: 78% !important;
+
+        /*
+           ارتفاع عکس عمداً ثابت است
+           تا محتوای صفحه از ارتفاع موبایل بیشتر شود
+        */
+        height: 280px !important;
+
+        margin: 5px auto 0 auto !important;
+
+        padding: 5px !important;
+
+        opacity: 1 !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    #stageHall.active .hall-photo-box {
+
+        transform: none !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       محتوای متن
+    ===================================================== */
+
+    #stageHall .hall-content {
+
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+
+        padding:
+            0 10px 40px 10px !important;
+
+        text-align: center !important;
+
+        transform: none !important;
+
+        opacity: 1 !important;
+
+        display: block !important;
+    }
+
+
+    #stageHall.active .hall-content {
+
+        transform: none !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       متن دعوت
+    ===================================================== */
+
+    #stageHall .hall-invitation {
+
+        margin:
+            0 0 2px 0 !important;
+
+        padding: 0 !important;
+
+        line-height: 1.15 !important;
+
+        opacity: 1 !important;
+
+        transform: none !important;
+    }
+
+
+    #stageHall.active .hall-invitation {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       عنوان
+    ===================================================== */
+
+    #stageHall .hall-title {
+
+        line-height: 1.05 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       تاریخ
+    ===================================================== */
+
+    #stageHall .hall-date {
+
+        margin-top: 3px !important;
+
+        line-height: 1.05 !important;
+    }
+
+
+    /* =====================================================
+       ساعت
+    ===================================================== */
+
+    #stageHall .hall-time {
+
+        margin-top: 2px !important;
+
+        line-height: 1.05 !important;
+    }
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    #stageHall .countdown {
+
+        margin-top: 6px !important;
+
+        padding: 0 !important;
+    }
+
+
+    /* =====================================================
+       دکمه مسیر
+    ===================================================== */
+
+    #stageHall .location-btn {
+
+        margin-top: 7px !important;
+
+        margin-bottom: 15px !important;
     }
 
 }
@@ -1504,163 +1689,22 @@ body {
    VERY SMALL PHONES
 ========================================================= */
 
-@media(max-width:380px) {
+@media screen and (max-width: 380px) {
 
-    .couple-photo-box {
-
-        width: 75%;
-
-        height: 48%;
-    }
-
-    .botanical {
-
-        width: 105px;
-
-        height: 340px;
-    }
-
-    .hall-photo-box {
-
-        width: 76%;
-
-        height: 31%;
-    }
-
-}
-    /* =========================================================
-   MOBILE HALL - FINAL SCROLL FIX
-========================================================= */
-
-@media screen and (max-width: 480px) {
-
-    /* خود اسلاید اسکرول نمی‌گیرد */
-    #stageHall {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-    }
-
-    /* تزئینات ثابت صفحه */
-    #stageHall .hall-background {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-    }
-
-    /* این قسمت واقعاً اسکرول می‌شود */
-    #stageHall .hall-scroll {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-
-        width: 100% !important;
-        height: 100% !important;
-
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-
-        -webkit-overflow-scrolling: touch !important;
-        overscroll-behavior-y: contain !important;
-
-        padding-top: 10px !important;
-        padding-bottom: 50px !important;
-
-        z-index: 20 !important;
-    }
-
-
-    /* عکس تالار */
     #stageHall .hall-photo-box {
-        position: relative !important;
 
-        left: auto !important;
-        top: auto !important;
-        bottom: auto !important;
+        width: 76% !important;
 
-        transform: none !important;
+        height: 250px !important;
 
-        width: 78% !important;
-        height: 280px !important;
-
-        margin: 5px auto 3px auto !important;
-
-        padding: 5px !important;
-
-        opacity: 1 !important;
+        margin-top: 5px !important;
     }
 
-    #stageHall.active .hall-photo-box {
-        transform: none !important;
-        opacity: 1 !important;
+    #stageHall .hall-scroll {
+
+        padding-bottom: 70px !important;
     }
 
-
-    /* محتوای زیر عکس */
-    #stageHall .hall-content {
-        position: relative !important;
-
-        left: auto !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 12px 30px 12px !important;
-
-        transform: none !important;
-
-        opacity: 1 !important;
-    }
-
-    #stageHall.active .hall-content {
-        transform: none !important;
-        opacity: 1 !important;
-    }
-
-
-    /* متن دعوت */
-    #stageHall .hall-invitation {
-        margin: 0 0 3px 0 !important;
-        padding: 0 !important;
-
-        line-height: 1.15 !important;
-    }
-
-
-    /* عنوان */
-    #stageHall .hall-title {
-        line-height: 1.1 !important;
-    }
-
-    #stageHall .hall-date {
-        margin-top: 3px !important;
-        line-height: 1.1 !important;
-    }
-
-    #stageHall .hall-time {
-        margin-top: 2px !important;
-        line-height: 1.1 !important;
-    }
-
-    #stageHall .countdown {
-        margin-top: 7px !important;
-    }
-
-    #stageHall .location-btn {
-        margin-top: 7px !important;
-        margin-bottom: 20px !important;
-    }
 }
 
 </style>
