@@ -1528,36 +1528,180 @@ body {
     }
 
 }
-      @media (max-width: 768px) {
+    /* =========================================================
+   HALL - MOBILE SCROLL
+========================================================= */
+
+@media (max-width: 480px) {
 
     #stageHall {
+        position: absolute !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
         height: 100vh !important;
-        max-height: 100vh !important;
+        max-height: none !important;
+
         overflow-y: auto !important;
         overflow-x: hidden !important;
+
         -webkit-overflow-scrolling: touch;
+
+        padding-top: 15px;
+        padding-bottom: 40px;
     }
+
+
+    /* -----------------------------------------
+       عکس تالار
+    ----------------------------------------- */
 
     #stageHall .hall-photo-box {
-        margin: 0 !important;
-        padding: 10px 0 0 0 !important;
+
+        position: relative !important;
+
+        left: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+
+        width: 78% !important;
+        height: 280px !important;
+
+        margin: 10px auto 0 !important;
+
+        padding: 5px !important;
+
+        flex-shrink: 0;
     }
 
+
+    #stageHall.active .hall-photo-box {
+
+        transform: none !important;
+
+        opacity: 1 !important;
+    }
+
+
     #stageHall .hall-photo {
+
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+
         display: block !important;
-        width: 85% !important;
-        height: auto !important;
-        margin: 0 auto !important;
+    }
+
+
+    /* -----------------------------------------
+       متن تالار
+    ----------------------------------------- */
+
+    #stageHall .hall-content {
+
+        position: relative !important;
+
+        left: auto !important;
+        bottom: auto !important;
+
+        width: 100% !important;
+
+        margin: 5px auto 0 !important;
+
+        padding: 0 12px 35px !important;
+
+        transform: none !important;
+
+        opacity: 1 !important;
+    }
+
+
+    #stageHall.active .hall-content {
+
+        transform: none !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* متن دعوت */
+    #stageHall .hall-invitation {
+
+        margin: 0 0 4px 0 !important;
+
+        padding: 0 !important;
+
+        line-height: 1.15 !important;
+    }
+
+
+    /* عنوان */
+    #stageHall .hall-title {
+
+        margin: 0 !important;
+
+        line-height: 1 !important;
+    }
+
+
+    /* تاریخ */
+    #stageHall .hall-date {
+
+        margin-top: 3px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    /* ساعت */
+    #stageHall .hall-time {
+
+        margin-top: 2px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    /* شمارش معکوس */
+    #stageHall .countdown {
+
+        margin-top: 6px !important;
+    }
+
+
+    /* دکمه مسیر */
+    #stageHall .location-btn {
+
+        margin-top: 6px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    #stageHall .hall-photo-box {
+
+        width: 76% !important;
+
+        height: 240px !important;
+
+        margin-top: 8px !important;
     }
 
     #stageHall .hall-content {
-        margin: 0 !important;
-        padding: 5px 15px 30px !important;
-    }
 
-    #stageHall .hall-invitation {
-        margin: 0 0 8px 0 !important;
-        padding: 0 !important;
+        margin-top: 3px !important;
+
+        padding-bottom: 40px !important;
     }
 
 }
@@ -2006,7 +2150,7 @@ body {
 
 <section
     id="stageHall"
-    class="stage"  style="overflow-y: scroll;m">
+    class="stage">
 
 
     <div class="botanical-frame" >
