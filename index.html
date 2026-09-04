@@ -1536,10 +1536,25 @@ body {
    Layout/appearance otherwise remains unchanged.
 ========================================================= */
 @media (max-width: 480px) {
+    /* اسلاید آخر در موبایل قابل اسکرول است، بدون تغییر ظاهر اصلی */
     #stageHall {
-        overflow-y: auto;
-        overflow-x: hidden;
+        height: 120%;
+        min-height: 120%;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
         -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+    }
+
+    /* فاصله خالی بین عکس و نوشته کمتر شود */
+    #stageHall .hall-content {
+        bottom: 8%;
+    }
+}
+
+@media (max-width: 380px) {
+    #stageHall .hall-content {
+        bottom: 7%;
     }
 }
 </style>
