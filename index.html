@@ -1529,110 +1529,109 @@ body {
 
 }
     /* =========================================================
-   HALL - MOBILE SCROLL
+   MOBILE HALL - FINAL SCROLL FIX
 ========================================================= */
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
+    /* خود اسلاید اسکرول نمی‌گیرد */
     #stageHall {
         position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
 
+    /* تزئینات ثابت صفحه */
+    #stageHall .hall-background {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+
+    /* این قسمت واقعاً اسکرول می‌شود */
+    #stageHall .hall-scroll {
+        position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
+        bottom: 0 !important;
 
-        height: 100vh !important;
-        max-height: none !important;
+        width: 100% !important;
+        height: 100% !important;
 
         overflow-y: auto !important;
         overflow-x: hidden !important;
 
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-y: contain !important;
 
-        padding-top: 15px;
-        padding-bottom: 40px;
+        padding-top: 10px !important;
+        padding-bottom: 50px !important;
+
+        z-index: 20 !important;
     }
 
 
-    /* -----------------------------------------
-       عکس تالار
-    ----------------------------------------- */
-
+    /* عکس تالار */
     #stageHall .hall-photo-box {
-
         position: relative !important;
 
         left: auto !important;
         top: auto !important;
+        bottom: auto !important;
 
         transform: none !important;
 
         width: 78% !important;
         height: 280px !important;
 
-        margin: 10px auto 0 !important;
+        margin: 5px auto 3px auto !important;
 
         padding: 5px !important;
-
-        flex-shrink: 0;
-    }
-
-
-    #stageHall.active .hall-photo-box {
-
-        transform: none !important;
 
         opacity: 1 !important;
     }
 
-
-    #stageHall .hall-photo {
-
-        width: 100% !important;
-        height: 100% !important;
-
-        object-fit: cover !important;
-
-        display: block !important;
+    #stageHall.active .hall-photo-box {
+        transform: none !important;
+        opacity: 1 !important;
     }
 
 
-    /* -----------------------------------------
-       متن تالار
-    ----------------------------------------- */
-
+    /* محتوای زیر عکس */
     #stageHall .hall-content {
-
         position: relative !important;
 
         left: auto !important;
+        top: auto !important;
+        right: auto !important;
         bottom: auto !important;
 
         width: 100% !important;
 
-        margin: 5px auto 0 !important;
-
-        padding: 0 12px 35px !important;
+        margin: 0 !important;
+        padding: 0 12px 30px 12px !important;
 
         transform: none !important;
 
         opacity: 1 !important;
     }
 
-
     #stageHall.active .hall-content {
-
         transform: none !important;
-
         opacity: 1 !important;
     }
 
 
     /* متن دعوت */
     #stageHall .hall-invitation {
-
-        margin: 0 0 4px 0 !important;
-
+        margin: 0 0 3px 0 !important;
         padding: 0 !important;
 
         line-height: 1.15 !important;
@@ -1641,69 +1640,27 @@ body {
 
     /* عنوان */
     #stageHall .hall-title {
-
-        margin: 0 !important;
-
-        line-height: 1 !important;
+        line-height: 1.1 !important;
     }
 
-
-    /* تاریخ */
     #stageHall .hall-date {
-
         margin-top: 3px !important;
-
-        line-height: 1 !important;
+        line-height: 1.1 !important;
     }
 
-
-    /* ساعت */
     #stageHall .hall-time {
-
         margin-top: 2px !important;
-
-        line-height: 1 !important;
+        line-height: 1.1 !important;
     }
 
-
-    /* شمارش معکوس */
     #stageHall .countdown {
-
-        margin-top: 6px !important;
+        margin-top: 7px !important;
     }
 
-
-    /* دکمه مسیر */
     #stageHall .location-btn {
-
-        margin-top: 6px !important;
+        margin-top: 7px !important;
+        margin-bottom: 20px !important;
     }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    #stageHall .hall-photo-box {
-
-        width: 76% !important;
-
-        height: 240px !important;
-
-        margin-top: 8px !important;
-    }
-
-    #stageHall .hall-content {
-
-        margin-top: 3px !important;
-
-        padding-bottom: 40px !important;
-    }
-
 }
 
 </style>
@@ -2148,177 +2105,77 @@ body {
      HALL
 ====================================================== -->
 
-<section
-    id="stageHall"
-    class="stage">
+<section id="stageHall" class="stage">
 
+    <!-- پس‌زمینه و تزئینات ثابت -->
+    <div class="hall-background">
+        <div class="botanical-frame">
+            <div class="botanical-oval" style="display:none;"></div>
 
-    <div class="botanical-frame" >
-
-        <div class="botanical-oval" style="display: none;"></div>
-
-
-        <svg
-            class="botanical right"
-            viewBox="0 0 150 430">
-
-            <path
-                class="branch"
-                d="
-                M80 420
-                C75 370 88 330 72 285
-                C60 245 82 210 72 170
-                C65 135 75 95 92 55
-                C98 40 100 25 99 8
-                " />
-
-            <path class="leaf" d="M82 365 C55 350 48 332 42 315" />
-            <path class="leaf" d="M78 342 C102 329 111 310 115 292" />
-            <path class="leaf" d="M73 310 C49 298 39 281 36 264" />
-            <path class="leaf" d="M72 278 C96 266 105 249 108 232" />
-            <path class="leaf" d="M72 244 C48 232 40 214 40 198" />
-            <path class="leaf" d="M73 212 C98 200 108 182 109 164" />
-            <path class="leaf" d="M73 178 C50 168 44 151 44 136" />
-            <path class="leaf" d="M76 145 C97 134 103 117 103 101" />
-
-        </svg>
-
-
-        <svg
-            class="botanical left"
-            viewBox="0 0 150 430">
-
-            <path
-                class="branch"
-                d="
-                M80 420
-                C75 370 88 330 72 285
-                C60 245 82 210 72 170
-                C65 135 75 95 92 55
-                C98 40 100 25 99 8
-                " />
-
-            <path class="leaf" d="M82 365 C55 350 48 332 42 315" />
-            <path class="leaf" d="M78 342 C102 329 111 310 115 292" />
-            <path class="leaf" d="M73 310 C49 298 39 281 36 264" />
-            <path class="leaf" d="M72 278 C96 266 105 249 108 232" />
-            <path class="leaf" d="M72 244 C48 232 40 214 40 198" />
-            <path class="leaf" d="M73 212 C98 200 108 182 109 164" />
-
-        </svg>
-
+            <!-- همان SVG های قبلی گل و برگت را اینجا نگه دار -->
+        </div>
     </div>
 
+    <!-- قسمت قابل اسکرول -->
+    <div class="hall-scroll">
 
-    <!-- عکس تالار -->
-
-    <div class="hall-photo-box">
-
-        <img
-            class="hall-photo"
-            src="images/place.jpg"
-            alt="تالار فرهنگیان">
-
-    </div>
-
-
-    <!-- اطلاعات تالار -->
-
-    <div class="hall-content">
-
-        <div class="hall-invitation">
-            به رسم محبت شما را به جشن پیوندمان دعوت می‌کنیم
+        <div class="hall-photo-box">
+            <img
+                class="hall-photo"
+                src="images/place.jpg"
+                alt="تالار فرهنگیان">
         </div>
 
-        <div class="hall-title">
-            تالار فرهنگیان
-        </div>
+        <div class="hall-content">
 
-        <div class="hall-date">
-            ۱۹ شهریور ۱۴۰۵
-        </div>
+            <div class="hall-invitation">
+                به رسم محبت شما را به جشن پیوندمان دعوت می‌کنیم
+            </div>
 
-        <div class="hall-time">
-            ساعت ۱۹ تا پاسی از شب
-        </div>
+            <div class="hall-title">
+                تالار فرهنگیان
+            </div>
 
+            <div class="hall-date">
+                ۱۹ شهریور ۱۴۰۵
+            </div>
 
-        <!-- COUNTDOWN -->
+            <div class="hall-time">
+                ساعت ۱۹ تا پاسی از شب
+            </div>
 
-        <div class="countdown">
+            <div class="countdown">
 
-            <div class="count-item">
+                <div class="count-item">
+                    <span id="days" class="count-number">0</span>
+                    <span class="count-label">روز</span>
+                </div>
 
-                <span
-                    id="days"
-                    class="count-number">
-                    0
-                </span>
+                <div class="count-item">
+                    <span id="hours" class="count-number">0</span>
+                    <span class="count-label">ساعت</span>
+                </div>
 
-                <span class="count-label">
-                    روز
-                </span>
+                <div class="count-item">
+                    <span id="minutes" class="count-number">0</span>
+                    <span class="count-label">دقیقه</span>
+                </div>
+
+                <div class="count-item">
+                    <span id="seconds" class="count-number">0</span>
+                    <span class="count-label">ثانیه</span>
+                </div>
 
             </div>
 
-
-            <div class="count-item">
-
-                <span
-                    id="hours"
-                    class="count-number">
-                    0
-                </span>
-
-                <span class="count-label">
-                    ساعت
-                </span>
-
-            </div>
-
-
-            <div class="count-item">
-
-                <span
-                    id="minutes"
-                    class="count-number">
-                    0
-                </span>
-
-                <span class="count-label">
-                    دقیقه
-                </span>
-
-            </div>
-
-
-            <div class="count-item">
-
-                <span
-                    id="seconds"
-                    class="count-number">
-                    0
-                </span>
-
-                <span class="count-label">
-                    ثانیه
-                </span>
-
-            </div>
+            <a
+                href="https://balad.ir/p/1t0dMmd7VFSeK3"
+                target="_blank"
+                class="location-btn">
+                📍 مشاهده مسیر تالار
+            </a>
 
         </div>
-
-
-        <!-- LOCATION -->
-
-        <a
-            href="https://balad.ir/p/1t0dMmd7VFSeK3"
-            target="_blank"
-            class="location-btn">
-
-            📍 مشاهده مسیر تالار
-
-        </a>
 
     </div>
 
